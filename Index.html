@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pravesh 3.0</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .typing {
+      font-size: 1.2em;
+      border-right: .1em solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(30, end), blink .75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: white; }
+    }
+    .subjects {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 15px;
+      width: 100%;
+      max-width: 500px;
+    }
+    .subject {
+      background: #1a1a1a;
+      padding: 15px;
+      text-align: center;
+      border-radius: 10px;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+    .subject:hover {
+      transform: scale(1.05);
+    }
+    .subject-icon {
+      font-size: 1.8em;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pravesh 3.0</h1>
+  <div class="typing">Presented to you by Roronoa@Shekhar</div>
+
+  <div class="subjects">
+    <div class="subject" onclick="location.href='english.html'">
+      <div class="subject-icon">A</div>
+      <div>English</div>
+    </div>
+    <div class="subject" onclick="location.href='maths.html'">
+      <div class="subject-icon">+</div>
+      <div>Maths</div>
+    </div>
+    <div class="subject" onclick="location.href='gt.html'">
+      <div class="subject-icon">GT</div>
+      <div>General Test</div>
+    </div>
+    <div class="subject" onclick="location.href='chemistry.html'">
+      <div class="subject-icon">H</div>
+      <div>Chemistry</div>
+    </div>
+    <div class="subject" onclick="location.href='biology.html'">
+      <div class="subject-icon">B</div>
+      <div>Biology</div>
+    </div>
+    <div class="subject" onclick="location.href='physics.html'">
+      <div class="subject-icon">P</div>
+      <div>Physics</div>
+    </div>
+  </div>
+</body>
+</html>
