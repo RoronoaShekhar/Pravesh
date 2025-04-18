@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maths - Pravesh 3.0</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: white;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .nav button {
+      padding: 10px 20px;
+      background: #1a1a1a;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .nav button:hover {
+      background: #292929;
+    }
+    .lectures {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .lecture {
+      padding: 15px;
+      background: #1f1f1f;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .popup iframe {
+      width: 90vw;
+      height: 50vh;
+      border: none;
+    }
+    .popup .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <button onclick="showSection('lecture')">Lecture</button>
+    <button onclick="window.location.href='english-notes.html'">Notes</button>
+    <button onclick="window.location.href='english-dpp.html'">DPP</button>
+  </div>
+
+  <div class="lectures" id="lecture">
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/dQw4w9WgXcQ')">Lecture 1</div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/dQw4w9WgXcQ')">Lecture 2</div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/dQw4w9WgXcQ')">Lecture 3</div>
+  </div>
+
+  <div class="popup" id="popup">
+    <div class="close" onclick="closePopup()">&times;</div>
+    <iframe id="video" src="" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    function openPopup(url) {
+      const popup = document.getElementById('popup');
+      const video = document.getElementById('video');
+      video.src = url;
+      popup.style.display = 'flex';
+    }
+    function closePopup() {
+      const popup = document.getElementById('popup');
+      const video = document.getElementById('video');
+      popup.style.display = 'none';
+      video.src = '';
+    }
+    function showSection(id) {
+      document.getElementById('lecture').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
