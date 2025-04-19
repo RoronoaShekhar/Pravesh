@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pravesh 3.0</title>
+  <title>CUET NTA SCIENCE 3.0</title>
   <style>
     body {
       margin: 0;
@@ -15,28 +15,30 @@
       align-items: center;
       justify-content: flex-start;
       min-height: 100vh;
-      padding: 30px 20px;
+      padding: 20px;
       box-sizing: border-box;
     }
 
-    h2 {
-      font-size: 1em;
+    h1 {
+      font-size: 1.2em;
       color: #999;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
+      text-align: center;
     }
 
-    h1 {
-      font-size: 1.6em;
+    h2 {
+      font-size: 1.8em;
+      font-weight: bold;
       margin-bottom: 30px;
-      color: #fff;
+      text-align: center;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
       gap: 15px;
       width: 100%;
-      max-width: 400px;
+      max-width: 480px;
     }
 
     .card {
@@ -44,66 +46,48 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px 10px;
-      border-radius: 18px;
-      color: #fff;
-      font-weight: bold;
-      font-size: 0.9em;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
+      border-radius: 16px;
+      padding: 20px;
       text-align: center;
+      font-weight: bold;
+      font-size: 1em;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.3s;
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
     }
 
-    .icon {
-      font-size: 1.8em;
-      margin-bottom: 10px;
-    }
+    .english { background-color: #ffc107; }
+    .maths { background-color: #28a745; }
+    .gt { background-color: #17a2b8; }
+    .chemistry { background-color: #dc3545; }
+    .biology { background-color: #6f42c1; }
+    .physics { background-color: #fd7e14; }
 
-    /* Custom colors for subjects */
-    .english { background: #facc15; color: #000; }
-    .maths { background: #f43f5e; }
-    .gt { background: #22c55e; }
-    .chemistry { background: #3b82f6; }
-    .biology { background: #8b5cf6; }
-    .physics { background: #ec4899; }
+    @media (max-width: 480px) {
+      .card {
+        padding: 18px 12px;
+        font-size: 0.95em;
+      }
+    }
   </style>
 </head>
 <body>
-
-  <h2>~Roronoa@Shekhar</h2>
-  <h1>CUET NTA SCIENCE 3.0 BATCH</h1>
+  <h1>~Roronoa@Shekhar</h1>
+  <h2>CUET NTA SCIENCE 3.0 BATCH</h2>
 
   <div class="grid">
-    <div class="card english" onclick="location.href='english.html'">
-      <div class="icon">📝</div>
-      English
-    </div>
-    <div class="card maths" onclick="location.href='maths.html'">
-      <div class="icon">➕</div>
-      Maths
-    </div>
-    <div class="card gt" onclick="location.href='gt.html'">
-      <div class="icon">🧠</div>
-      General Test
-    </div>
-    <div class="card chemistry" onclick="location.href='chemistry.html'">
-      <div class="icon">⚗️</div>
-      Chemistry
-    </div>
-    <div class="card biology" onclick="location.href='biology.html'">
-      <div class="icon">🧬</div>
-      Biology
-    </div>
-    <div class="card physics" onclick="location.href='physics.html'">
-      <div class="icon">🔭</div>
-      Physics
-    </div>
+    <div class="card english" onclick="location.href='english.html'">English</div>
+    <div class="card maths" onclick="location.href='maths.html'">Maths</div>
+    <div class="card gt" onclick="location.href='gt.html'">General Test</div>
+    <div class="card chemistry" onclick="location.href='chemistry.html'">Chemistry</div>
+    <div class="card biology" onclick="location.href='biology.html'">Biology</div>
+    <div class="card physics" onclick="location.href='physics.html'">Physics</div>
   </div>
-
 </body>
 </html>
