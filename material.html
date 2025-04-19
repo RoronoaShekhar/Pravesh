@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Storage Links</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eae6f8;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px 10px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .search-bar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 14px;
+      padding: 10px 15px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .search-bar input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .folder-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .folder-item {
+      background-color: #fff;
+      border-radius: 18px;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .folder-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .folder-icon {
+      width: 40px;
+      height: 40px;
+      background-color: #ffc107;
+      border-radius: 8px;
+    }
+
+    .folder-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .folder-name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .folder-type {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .folder-size {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .no-results {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 16px;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Search</h1>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search for files or folders..." oninput="filterFolders()">
+    </div>
+
+    <div class="folder-list" id="folderList">
+      <a href="intent://drive.google.com/drive/folders/1DZ-LDQ5HzCMT0hJ3LVmf0ODfO_gT7z-F#Intent;scheme=https;package=com.google.android.apps.docs;end" class="folder-item">
+        <div class="folder-info">
+          <div class="folder-icon"></div>
+          <div class="folder-text">
+            <div class="folder-name">Design file 2023</div>
+            <div class="folder-type">Adobe Files</div>
+          </div>
+        </div>
+        <div class="folder-size">10 GB</div>
+      </a>
+
+      <a href="intent://drive.google.com/drive/folders/your-folder-id#Intent;scheme=https;package=com.figma.mirror;end" class="folder-item">
+        <div class="folder-info">
+          <div class="folder-icon"></div>
+          <div class="folder-text">
+            <div class="folder-name">Electrofy App</div>
+            <div class="folder-type">Figma Files</div>
+          </div>
+        </div>
+        <div class="folder-size">6.1 GB</div>
+      </a>
+
+      <a href="intent://drive.google.com/drive/folders/your-folder-id#Intent;scheme=https;package=com.adobe.ai;end" class="folder-item">
+        <div class="folder-info">
+          <div class="folder-icon"></div>
+          <div class="folder-text">
+            <div class="folder-name">Antiloop</div>
+            <div class="folder-type">AI Files</div>
+          </div>
+        </div>
+        <div class="folder-size">3 GB</div>
+      </a>
+
+      <a href="intent://drive.google.com/drive/folders/your-folder-id#Intent;scheme=https;package=com.bohemiancoding.sketch;end" class="folder-item">
+        <div class="folder-info">
+          <div class="folder-icon"></div>
+          <div class="folder-text">
+            <div class="folder-name">Super Cup App</div>
+            <div class="folder-type">Sketch Files</div>
+          </div>
+        </div>
+        <div class="folder-size">12 GB</div>
+      </a>
+
+      <a href="intent://drive.google.com/drive/folders/your-folder-id#Intent;scheme=https;package=net.cozic.joplin;end" class="folder-item">
+        <div class="folder-info">
+          <div class="folder-icon"></div>
+          <div class="folder-text">
+            <div class="folder-name">Front-end</div>
+            <div class="folder-type">Joplin Files</div>
+          </div>
+        </div>
+        <div class="folder-size">7 GB</div>
+      </a>
+    </div>
+
+    <div class="no-results" id="noResults" style="display:none">No results found</div>
+  </div>
+
+  <script>
+    function filterFolders() {
+      const input = document.getElementById('searchInput');
+      const filter = input.value.toLowerCase();
+      const folders = document.querySelectorAll('.folder-item');
+      let matchCount = 0;
+
+      folders.forEach(folder => {
+        const name = folder.querySelector('.folder-name').textContent.toLowerCase();
+        const type = folder.querySelector('.folder-type').textContent.toLowerCase();
+
+        if (name.includes(filter) || type.includes(filter)) {
+          folder.style.display = 'flex';
+          matchCount++;
+        } else {
+          folder.style.display = 'none';
+        }
+      });
+
+      document.getElementById('noResults').style.display = matchCount === 0 ? 'block' : 'none';
+    }
+  </script>
+</body>
+
+</html>
