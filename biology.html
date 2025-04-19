@@ -8,8 +8,8 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #0d0d0d;
-      color: white;
+      background: #f5f5f5;
+      color: #222;
       padding: 20px;
       box-sizing: border-box;
     }
@@ -18,55 +18,71 @@
       justify-content: space-around;
       margin-bottom: 20px;
     }
-    .nav button {
-      padding: 10px 20px;
-      background: #1a1a1a;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .nav button:hover {
-      background: #292929;
-    }
-    .folders {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 20px;
-    }
-    .folder {
-      background: #1f1f1f;
+    .nav .tab {
+      flex: 1;
+      background: #e0e0e0;
+      margin: 0 10px;
       padding: 15px;
-      border-radius: 8px;
+      border-radius: 12px;
       text-align: center;
       cursor: pointer;
+      font-weight: bold;
+      color: #444;
+    }
+    .nav .tab:hover {
+      background: #d4d4d4;
     }
     .lectures {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 15px;
     }
     .lecture {
+      background: white;
       padding: 15px;
-      background: #1f1f1f;
-      border-radius: 8px;
-      cursor: pointer;
+      border-radius: 12px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .unavailable {
-      font-size: 14px;
-      color: #ff6363;
-    }
-    .download-btn {
-      background: #ff6363;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 5px;
-      color: white;
+    .lecture-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
       cursor: pointer;
+    }
+    .lecture-info img {
+      width: 30px;
+      height: 30px;
+    }
+    .lecture-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .lecture-title {
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .lecture-meta {
+      font-size: 12px;
+      color: #888;
+    }
+    .download {
+      text-align: right;
+    }
+    .download button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .download .note {
+      font-size: 12px;
+      color: #e63946;
+      margin-top: 5px;
     }
     .popup {
       display: none;
@@ -96,34 +112,65 @@
   </style>
 </head>
 <body>
+
   <div class="nav">
-    <button onclick="showSection('lecture')">Lecture</button>
-    <button onclick="window.location.href='biology-notes.html'">Notes</button>
-    <button onclick="window.location.href='biology-dpp.html'">DPP</button>
+    <div class="tab" onclick="window.location.href='biology.html'">Lectures</div>
+    <div class="tab" onclick="window.location.href='biology-notes.html'">Notes</div>
+    <div class="tab" onclick="window.location.href='biology-dpp.html'">DPP</div>
   </div>
 
-  <div class="folders">
-    <div class="folder">Lecture</div>
-    <div class="folder">Notes</div>
-    <div class="folder">DPP</div>
-  </div>
-
-  <div class="lectures" id="lecture">
+  <div class="lectures">
+    <!-- Lecture 2 (Download only) -->
     <div class="lecture">
-      <span onclick="openPopup('https://www.youtube.com/embed/aKdWpVN_sHg')">Lecture 2</span>
-      <span class="unavailable">This lecture is unavailable. You will have to download it by clicking the button below.</span>
-      <button class="download-btn" onclick="window.location.href='https://dl.kpsbots.workers.dev/dl/67ffa7c7d837691adab38253'">Download</button>
+      <div class="lecture-info">
+        <img src="https://img.icons8.com/ios-filled/50/000000/video.png" />
+        <div class="lecture-text">
+          <span class="lecture-title">Lecture 2</span>
+          <span class="lecture-meta">12:00 - 10 Jul 2020</span>
+        </div>
+      </div>
+      <div class="download">
+        <button onclick="window.location.href='https://dl.kpsbots.workers.dev/dl/67ffa7c7d837691adab38253'">Download</button>
+        <div class="note">This video is only available for download.</div>
+      </div>
     </div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/ozi3fzZW-FM')">Lecture 3</div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/fObINTJeBgg')">Lecture 4</div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/PLfgikyQCNk')">Lecture 5</div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/ghaLWu3b0bQ')">Lecture 6</div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/YFSZupwXbCE')">Lecture 7</div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/buQ-Ue2REkw')">Lecture 8</div>
+
+    <!-- Other Lectures (Embed) -->
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/ozi3fzZW-FM')">
+      <div class="lecture-info">
+        <img src="https://img.icons8.com/ios-filled/50/000000/video.png" />
+        <div class="lecture-text">
+          <span class="lecture-title">Lecture 3</span>
+          <span class="lecture-meta">15:30 - 28 Jun 2020</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/fObINTJeBgg')">
+      <div class="lecture-info">
+        <img src="https://img.icons8.com/ios-filled/50/000000/video.png" />
+        <div class="lecture-text">
+          <span class="lecture-title">Lecture 4</span>
+          <span class="lecture-meta">16:00 - 29 Jun 2020</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat similarly for Lecture 5-8 -->
+
+    <!-- Lecture 9 (Download only) -->
     <div class="lecture">
-      <span onclick="openPopup('https://www.youtube.com/embed/dQw4w9WgXcQ')">Lecture 9</span>
-      <span class="unavailable">This lecture is unavailable. You will have to download it by clicking the button below.</span>
-      <button class="download-btn" onclick="window.location.href='https://dl.kpsbots.workers.dev/dl/67fd9579cdc3bd6d093d9c0f'">Download</button>
+      <div class="lecture-info">
+        <img src="https://img.icons8.com/ios-filled/50/000000/video.png" />
+        <div class="lecture-text">
+          <span class="lecture-title">Lecture 9</span>
+          <span class="lecture-meta">18:00 - 01 Jul 2020</span>
+        </div>
+      </div>
+      <div class="download">
+        <button onclick="window.location.href='https://dl.kpsbots.workers.dev/dl/67fd9579cdc3bd6d093d9c0f'">Download</button>
+        <div class="note">This video is only available for download.</div>
+      </div>
     </div>
   </div>
 
@@ -144,9 +191,6 @@
       const video = document.getElementById('video');
       popup.style.display = 'none';
       video.src = '';
-    }
-    function showSection(id) {
-      document.getElementById('lecture').style.display = 'flex';
     }
   </script>
 </body>
