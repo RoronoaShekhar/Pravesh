@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chemistry - Pravesh 3.0</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #0d0d0d;
-      color: white;
+      background: white;
+      color: #0d0d0d;
       padding: 20px;
       box-sizing: border-box;
     }
@@ -20,21 +21,21 @@
     }
     .nav button {
       padding: 10px 20px;
-      background: #1a1a1a;
+      background: #e0e0e0;
       border: none;
-      border-radius: 5px;
-      color: white;
+      border-radius: 10px;
+      color: #0d0d0d;
       font-weight: bold;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+    }
+    .nav button i {
+      font-size: 16px;
     }
     .nav button:hover {
-      background: #292929;
-    }
-    .nav i {
-      font-size: 18px;
+      background: #d5d5d5;
     }
     .lectures {
       display: flex;
@@ -43,8 +44,9 @@
     }
     .lecture {
       padding: 15px;
-      background: #1f1f1f;
+      background: #f2f2f2;
       border-radius: 8px;
+      cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -53,11 +55,9 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      cursor: pointer;
     }
     .lecture i {
-      color: #00ffcc;
-      font-size: 18px;
+      color: #ff6363;
     }
     .unavailable {
       font-size: 14px;
@@ -97,64 +97,47 @@
       cursor: pointer;
     }
   </style>
-  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="nav">
-    <button onclick="showSection('lecture')"><i class="fas fa-folder"></i> Lecture</button>
-    <button onclick="window.location.href='chemistry-notes.html'"><i class="fas fa-folder"></i> Notes</button>
-    <button onclick="window.location.href='chemistry-dpp.html'"><i class="fas fa-folder"></i> DPP</button>
+    <button onclick="showSection('lecture')"><i class="fas fa-folder"></i>Lecture</button>
+    <button onclick="window.location.href='chemistry-notes.html'"><i class="fas fa-folder"></i>Notes</button>
+    <button onclick="window.location.href='chemistry-dpp.html'"><i class="fas fa-folder"></i>DPP</button>
   </div>
 
   <div class="lectures" id="lecture">
-    <div class="lecture">
-      <span onclick="openPopup('https://www.youtube.com/embed/qanEvwYq-iM')">
-        <i class="fas fa-play-circle"></i> Lecture 1
-      </span>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/qanEvwYq-iM')">
+      <span><i class="fas fa-play"></i>Lecture 1</span>
+    </div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/MtTxGyzm8l')">
+      <span><i class="fas fa-play"></i>Lecture 2</span>
+    </div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/mXoCwegs96E')">
+      <span><i class="fas fa-play"></i>Lecture 3</span>
+    </div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/4qgiubeAcZ0')">
+      <span><i class="fas fa-play"></i>Lecture 4</span>
+    </div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/-tXQvwnFqzs')">
+      <span><i class="fas fa-play"></i>Lecture 5</span>
+    </div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/q6lBk67mWmk')">
+      <span><i class="fas fa-play"></i>Lecture 6</span>
+    </div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/-T12E7Na5t4')">
+      <span><i class="fas fa-play"></i>Lecture 7</span>
+    </div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/SIwMY4h6Rqs')">
+      <span><i class="fas fa-play"></i>Lecture 8</span>
     </div>
     <div class="lecture">
-      <span onclick="openPopup('https://www.youtube.com/embed/MtTxGyzm8l')">
-        <i class="fas fa-play-circle"></i> Lecture 2
-      </span>
-    </div>
-    <div class="lecture">
-      <span onclick="openPopup('https://www.youtube.com/embed/mXoCwegs96E')">
-        <i class="fas fa-play-circle"></i> Lecture 3
-      </span>
-    </div>
-    <div class="lecture">
-      <span onclick="openPopup('https://www.youtube.com/embed/4qgiubeAcZ0')">
-        <i class="fas fa-play-circle"></i> Lecture 4
-      </span>
-    </div>
-    <div class="lecture">
-      <span onclick="openPopup('https://www.youtube.com/embed/-tXQvwnFqzs')">
-        <i class="fas fa-play-circle"></i> Lecture 5
-      </span>
-    </div>
-    <div class="lecture">
-      <span onclick="openPopup('https://www.youtube.com/embed/q6lBk67mWmk')">
-        <i class="fas fa-play-circle"></i> Lecture 6
-      </span>
-    </div>
-    <div class="lecture">
-      <span onclick="openPopup('https://www.youtube.com/embed/-T12E7Na5t4')">
-        <i class="fas fa-play-circle"></i> Lecture 7
-      </span>
-    </div>
-    <div class="lecture">
-      <span onclick="openPopup('https://www.youtube.com/embed/SIwMY4h6Rqs')">
-        <i class="fas fa-play-circle"></i> Lecture 8
-      </span>
-    </div>
-    <div class="lecture">
-      <span><i class="fas fa-play-circle"></i> Lecture 9</span>
-      <span class="unavailable">Video not available online.</span>
+      <span><i class="fas fa-play"></i>Lecture 9</span>
+      <span class="unavailable">This lecture is unavailable. Download below.</span>
       <button class="download-btn" onclick="window.location.href='https://dl.kpsbots.workers.dev/dl/67feab24d837691adab37e0e'">Download</button>
     </div>
     <div class="lecture">
-      <span><i class="fas fa-play-circle"></i> Lecture 10</span>
-      <span class="unavailable">Video not available online.</span>
+      <span><i class="fas fa-play"></i>Lecture 10</span>
+      <span class="unavailable">This lecture is unavailable. Download below.</span>
       <button class="download-btn" onclick="window.location.href='https://dl.kpsbots.workers.dev/dl/6800b9bf03f313015ff8fd60'">Download</button>
     </div>
   </div>
