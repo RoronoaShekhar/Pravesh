@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Physics- Pravesh 3.0</title>
+  <title>Physics - Pravesh 3.0</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #0d0d0d;
-      color: white;
+      background: white;
+      color: #0d0d0d;
       padding: 20px;
       box-sizing: border-box;
     }
@@ -20,15 +21,21 @@
     }
     .nav button {
       padding: 10px 20px;
-      background: #1a1a1a;
+      background: #e0e0e0;
       border: none;
-      border-radius: 5px;
-      color: white;
+      border-radius: 10px;
+      color: #0d0d0d;
       font-weight: bold;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav button i {
+      font-size: 16px;
     }
     .nav button:hover {
-      background: #292929;
+      background: #d5d5d5;
     }
     .lectures {
       display: flex;
@@ -37,9 +44,20 @@
     }
     .lecture {
       padding: 15px;
-      background: #1f1f1f;
+      background: #f2f2f2;
       border-radius: 8px;
       cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .lecture span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .lecture i {
+      color: #3f8efc;
     }
     .popup {
       display: none;
@@ -70,22 +88,22 @@
 </head>
 <body>
   <div class="nav">
-    <button onclick="showSection('lecture')">Lecture</button>
-    <button onclick="window.location.href='physics-notes.html'">Notes</button>
-    <button onclick="window.location.href='physics-dpp.html'">DPP</button>
+    <button onclick="showSection('lecture')"><i class="fas fa-folder"></i>Lecture</button>
+    <button onclick="window.location.href='physics-notes.html'"><i class="fas fa-folder"></i>Notes</button>
+    <button onclick="window.location.href='physics-dpp.html'"><i class="fas fa-folder"></i>DPP</button>
   </div>
 
   <div class="lectures" id="lecture">
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/mSuifAnzkwc')">Lecture 1</div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/8CI1FB9DrqQ')">Lecture 2</div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/CUL-3_l2inE')">Lecture 3</div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/4igsXxodi98')">Lecture 4</div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/olIS8TpmvN0')">Lecture 5</div> 
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/oqb9y1F-P7Q')">Lecture 6</div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/bYDrYjpwY5s')">Lecture 7</div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/m-4U6157IAU')">Lecture 8</div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/dQw4w9WgXcQ')">Lecture 9</div>
-    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/dQw4w9WgXcQ')">Lecture 10</div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/mSuifAnzkwc')"><span><i class='fas fa-play'></i>Lecture 1</span></div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/8CI1FB9DrqQ')"><span><i class='fas fa-play'></i>Lecture 2</span></div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/CUL-3_l2inE')"><span><i class='fas fa-play'></i>Lecture 3</span></div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/4igsXxodi98')"><span><i class='fas fa-play'></i>Lecture 4</span></div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/olIS8TpmvN0')"><span><i class='fas fa-play'></i>Lecture 5</span></div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/oqb9y1F-P7Q')"><span><i class='fas fa-play'></i>Lecture 6</span></div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/bYDrYjpwY5s')"><span><i class='fas fa-play'></i>Lecture 7</span></div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/m-4U6157IAU')"><span><i class='fas fa-play'></i>Lecture 8</span></div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/dQw4w9WgXcQ')"><span><i class='fas fa-play'></i>Lecture 9</span></div>
+    <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/dQw4w9WgXcQ')"><span><i class='fas fa-play'></i>Lecture 10</span></div>
   </div>
 
   <div class="popup" id="popup">
