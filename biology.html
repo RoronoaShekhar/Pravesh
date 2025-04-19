@@ -18,7 +18,7 @@
       justify-content: space-around;
       margin-bottom: 20px;
     }
-    .nav .tab {
+    .tab {
       flex: 1;
       background: #e0e0e0;
       margin: 0 10px;
@@ -28,10 +28,19 @@
       cursor: pointer;
       font-weight: bold;
       color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
-    .nav .tab:hover {
+    .tab:hover {
       background: #d4d4d4;
     }
+    .tab img {
+      width: 20px;
+      height: 20px;
+    }
+
     .lectures {
       display: flex;
       flex-direction: column;
@@ -53,20 +62,12 @@
       cursor: pointer;
     }
     .lecture-info img {
-      width: 30px;
-      height: 30px;
+      width: 24px;
+      height: 24px;
     }
     .lecture-text {
-      display: flex;
-      flex-direction: column;
-    }
-    .lecture-title {
       font-weight: 600;
       font-size: 16px;
-    }
-    .lecture-meta {
-      font-size: 12px;
-      color: #888;
     }
     .download {
       text-align: right;
@@ -113,21 +114,29 @@
 </head>
 <body>
 
+  <!-- Navigation Tabs -->
   <div class="nav">
-    <div class="tab" onclick="window.location.href='biology.html'">Lectures</div>
-    <div class="tab" onclick="window.location.href='biology-notes.html'">Notes</div>
-    <div class="tab" onclick="window.location.href='biology-dpp.html'">DPP</div>
+    <div class="tab" onclick="window.location.href='biology.html'">
+      <img src="https://img.icons8.com/ios-filled/50/000000/folder-invoices--v1.png" alt="folder" />
+      Lectures
+    </div>
+    <div class="tab" onclick="window.location.href='biology-notes.html'">
+      <img src="https://img.icons8.com/ios-filled/50/000000/folder-invoices--v1.png" alt="folder" />
+      Notes
+    </div>
+    <div class="tab" onclick="window.location.href='biology-dpp.html'">
+      <img src="https://img.icons8.com/ios-filled/50/000000/folder-invoices--v1.png" alt="folder" />
+      DPP
+    </div>
   </div>
 
+  <!-- Lecture List -->
   <div class="lectures">
-    <!-- Lecture 2 (Download only) -->
+    <!-- Example Lecture (Download Only) -->
     <div class="lecture">
       <div class="lecture-info">
-        <img src="https://img.icons8.com/ios-filled/50/000000/video.png" />
-        <div class="lecture-text">
-          <span class="lecture-title">Lecture 2</span>
-          <span class="lecture-meta">12:00 - 10 Jul 2020</span>
-        </div>
+        <img src="https://img.icons8.com/ios-filled/50/000000/play--v1.png" alt="play" />
+        <div class="lecture-text">Lecture 2</div>
       </div>
       <div class="download">
         <button onclick="window.location.href='https://dl.kpsbots.workers.dev/dl/67ffa7c7d837691adab38253'">Download</button>
@@ -135,37 +144,27 @@
       </div>
     </div>
 
-    <!-- Other Lectures (Embed) -->
+    <!-- Example Lecture (Embedded Video) -->
     <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/ozi3fzZW-FM')">
       <div class="lecture-info">
-        <img src="https://img.icons8.com/ios-filled/50/000000/video.png" />
-        <div class="lecture-text">
-          <span class="lecture-title">Lecture 3</span>
-          <span class="lecture-meta">15:30 - 28 Jun 2020</span>
-        </div>
+        <img src="https://img.icons8.com/ios-filled/50/000000/play--v1.png" alt="play" />
+        <div class="lecture-text">Lecture 3</div>
       </div>
     </div>
 
+    <!-- Just copy-paste this block and change link & title for more lectures -->
     <div class="lecture" onclick="openPopup('https://www.youtube.com/embed/fObINTJeBgg')">
       <div class="lecture-info">
-        <img src="https://img.icons8.com/ios-filled/50/000000/video.png" />
-        <div class="lecture-text">
-          <span class="lecture-title">Lecture 4</span>
-          <span class="lecture-meta">16:00 - 29 Jun 2020</span>
-        </div>
+        <img src="https://img.icons8.com/ios-filled/50/000000/play--v1.png" alt="play" />
+        <div class="lecture-text">Lecture 4</div>
       </div>
     </div>
 
-    <!-- Repeat similarly for Lecture 5-8 -->
-
-    <!-- Lecture 9 (Download only) -->
+    <!-- Download-only lecture -->
     <div class="lecture">
       <div class="lecture-info">
-        <img src="https://img.icons8.com/ios-filled/50/000000/video.png" />
-        <div class="lecture-text">
-          <span class="lecture-title">Lecture 9</span>
-          <span class="lecture-meta">18:00 - 01 Jul 2020</span>
-        </div>
+        <img src="https://img.icons8.com/ios-filled/50/000000/play--v1.png" alt="play" />
+        <div class="lecture-text">Lecture 9</div>
       </div>
       <div class="download">
         <button onclick="window.location.href='https://dl.kpsbots.workers.dev/dl/67fd9579cdc3bd6d093d9c0f'">Download</button>
@@ -174,6 +173,7 @@
     </div>
   </div>
 
+  <!-- Popup for YouTube videos -->
   <div class="popup" id="popup">
     <div class="close" onclick="closePopup()">&times;</div>
     <iframe id="video" src="" allowfullscreen></iframe>
@@ -186,6 +186,7 @@
       video.src = url;
       popup.style.display = 'flex';
     }
+
     function closePopup() {
       const popup = document.getElementById('popup');
       const video = document.getElementById('video');
